@@ -25,7 +25,7 @@ class authController {
           const reUser = await newUser.save();
           if (reUser) {
             return res
-              .status(200)
+              .status(201)
               .json({ message: "Successfully Register", user: reUser });
           }
         }
