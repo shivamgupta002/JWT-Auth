@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Service from "./Component/Pages/Service";
 import SignUp from "./Component/authPage/SignUp";
 import Login from "./Component/authPage/Login";
+import Home from "./Component/Pages/Home";
 
 const Controller = () => {
   return (
@@ -13,6 +14,7 @@ const Controller = () => {
       <Routes>
         <Route path="/signUp" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/service" element={<Service />} />
       </Routes>

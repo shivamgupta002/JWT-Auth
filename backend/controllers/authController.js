@@ -54,13 +54,13 @@ class authController {
             });
             return res.status(200).json({ message: "Login Successful", token });
           } else {
-            return res.status(400).json({ message: "Invalid Credentials" });
+            return res.status(401).json({ message: "Invalid Credentials" });
           }
         } else {
-          return res.status(400).json({ message: "User not Registered" });
+          return res.status(401).json({ message: "User not Registered" });
         }
       } else {
-        return res.status(400).json({ message: "All fields are required" });
+        return res.status(401).json({ message: "All fields are required" });
       }
     } catch (e) {
       return res.status(400).json({ message: e.message });
@@ -82,14 +82,14 @@ class authController {
             .json({ message: "Password change Successfully" });
         } else {
           return res
-            .status(400)
+            .status(401)
             .json({ message: "Password and confirm password not match" });
         }
       } else {
-        return res.status(400).json({ message: "All Fields are required" });
+        return res.status(401).json({ message: "All Fields are required" });
       }
     } catch (e) {
-      return res.status(400).json({ message: e.message });
+      return res.status(401).json({ message: e.message });
     }
   };
 }

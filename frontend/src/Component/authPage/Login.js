@@ -12,14 +12,11 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     // console.log(input);
-    const response = await axios.post(
-      "api/auth/users/login",
-      input
-    );
-    alert(response.data.message);
+    const response = await axios.post("api/auth/users/login", input);
+    alert(response);
     // console.log(response.data);
     if (response.status === 200) {
-      Navigate("/about");
+      Navigate("/");
     }
   };
   return (
