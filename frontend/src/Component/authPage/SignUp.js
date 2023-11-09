@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import axios from "../Axios/Api";
 import { useNavigate } from "react-router-dom";
 const SignUp = () => {
   const Navigate = useNavigate();
@@ -14,10 +14,7 @@ const SignUp = () => {
     e.preventDefault();
     // console.log(input);
     if (input.password === input.cpassword) {
-      const response = await axios.post(
-        "http://localhost:5000/api/auth/users/register",
-        input
-      );
+      const response = await axios.post("api/auth/users/register", input);
       // console.log(response.data);
       alert(response.data.message);
       if (response.status === 201) {

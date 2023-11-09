@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import axios from "../Axios/Api";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
@@ -13,10 +13,10 @@ const Login = () => {
     e.preventDefault();
     // console.log(input);
     const response = await axios.post(
-      "http://localhost:5000/api/auth/users/login",
+      "api/auth/users/login",
       input
     );
-    alert(response.data.message)
+    alert(response.data.message);
     // console.log(response.data);
     if (response.status === 200) {
       Navigate("/about");
