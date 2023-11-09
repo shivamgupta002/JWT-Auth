@@ -52,7 +52,9 @@ class authController {
             const token = jwt.sign({ userID: isUser._id }, "shivam", {
               expiresIn: "2d",
             });
-            return res.status(200).json({ message: "Login Successful", token });
+            return res
+              .status(200)
+              .json({ message: "Login Successful", token, name: isUser.name });
           } else {
             return res.status(401).json({ message: "Invalid Credentials" });
           }
