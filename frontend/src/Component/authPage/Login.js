@@ -18,7 +18,8 @@ const Login = () => {
       alert(response.data.message);
       localStorage.setItem("token", response.data.token);
       localStorage.setItem("name", response.data.name);
-      Navigate("/changePassword");
+      Navigate("/");
+      // Navigate("/changePassword");
     }
   };
   return (
